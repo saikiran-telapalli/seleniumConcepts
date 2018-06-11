@@ -67,7 +67,7 @@ public class DupDropdownVal {
 		int country_size = country_list.size();
 		System.out.println("countries: "+country_size);
 
-		System.out.println("Showing all countries with occurrences count in form key and value");
+		//System.out.println("Showing all countries with occurrences count in form key and value");
 		Object[] country_array = new Object[country_size];
 		for(int i=0; i<country_size; i++) {
 			//System.out.println(country_list.get(i).getText());
@@ -98,7 +98,8 @@ public class DupDropdownVal {
 		for(int i=1; i<country_size; ) {
 			
 			String select_Country = driver.findElements(country_list_xpath).get(i).getText();
-			System.out.println("\n\nSelected Country is: "+select_Country);
+			System.out.println("==========================================================================================");
+			System.out.println("Selected Country is: "+select_Country);
 			driver.findElement(country_search_text).sendKeys(select_Country+Keys.ENTER);
 			
 			WebElement city_Drodown = driver.findElement(city_DropDown_xpath);
@@ -110,11 +111,18 @@ public class DupDropdownVal {
 			List<WebElement> city_list = driver.findElements(city_list_xpath);
 			int city_size = city_list.size();
 			System.out.println("cities: "+city_size);
-			System.out.println("Showing all cities with occurrences count from "+select_Country+" in form key and value");
+			
+			//System.out.println("Showing all cities with occurrences count from "+select_Country+" in form key and value");
 			
 			
 			Object[] city_array = new Object[city_size];
 			for(int j=0; j<city_size; j++) {
+				if(city_list.get(j).getText().equalsIgnoreCase("Loading more results…")) {
+					System.out.println("\nIn "+select_Country+ " all cities are showing multiple times after loading more.. option in the city drop down");
+				}
+				else if(city_list.get(j).getText().equalsIgnoreCase("No results found")) {
+					System.out.println("\nNo results found in the city drop down");
+				}
 			//System.out.println(city_list.get(j).getText());
 			city_array[j] = city_list.get(j).getText();
 			}	
@@ -140,7 +148,7 @@ public class DupDropdownVal {
 
 
 	public void RepeatitionInArray(Object[] objarray) {
-
+		
 		boolean not_repeated = true;
 		Map<Object, Integer> dupMap = new HashMap<Object, Integer>(); 
 		//char[] chrs = str.toCharArray();
@@ -155,19 +163,20 @@ public class DupDropdownVal {
 
 		//To Count Occurrences
 		//System.out.println("Printing all occurrences count");
-		System.out.println(dupMap);
+		
+		//System.out.println(dupMap);
 
-		System.out.println("Repeated records in the selected drop down:");
+		System.out.println("\nRepeated cities in the selected country:");
 		//To Count Only Repeated Character Occurrences In Dropdown
 		Set<Object> keys = dupMap.keySet();
 		for(Object record : keys){
 			if(dupMap.get(record) > 1){
-				System.out.println(record+"--->"+dupMap.get(record));
+				System.out.println(record+" ---> "+dupMap.get(record)+" times");
 				not_repeated = false;
 			}
 		}
 		if(not_repeated) {
-			System.out.println("No records are duplicated in selected the drop down");
+			System.out.println("No records are duplicated");
 		}
 	}
 
