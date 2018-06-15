@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="RetryFailedTestSuite" verbose="1">
+
+	<listeners>
+		<listener class-name="RetryLogic.MyTransformer" />   <!-- Using MyTransformer class implemented by IAnnotationTransformer will 
+															repeat all test cases if failed -->
+	</listeners>
+
+	<test name="RetryMulitpleFailedTestCases">
+		<classes>
+			<class name="RetryLogic.MyTests" />
+		</classes>
+	</test>
+</suite>

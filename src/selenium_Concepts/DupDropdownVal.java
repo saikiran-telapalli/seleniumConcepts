@@ -26,6 +26,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -47,6 +48,10 @@ public class DupDropdownVal {
 		
 		
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/Drivers/chromedriver");
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("window-size =1400,800");
+		options.addArguments("headless");
+		
 		WebDriver driver = new ChromeDriver();
 
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -166,7 +171,7 @@ public class DupDropdownVal {
 		
 		//System.out.println(dupMap);
 
-		System.out.println("\nRepeated cities in the selected country:");
+		System.out.println("\nRepeated records in the selected country:");
 		//To Count Only Repeated Character Occurrences In Dropdown
 		Set<Object> keys = dupMap.keySet();
 		for(Object record : keys){

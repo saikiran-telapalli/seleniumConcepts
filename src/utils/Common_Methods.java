@@ -1,4 +1,4 @@
-package selenium_Concepts;
+package utils;
 
 import java.io.File;
 import java.io.IOException;
