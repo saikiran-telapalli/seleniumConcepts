@@ -3,12 +3,12 @@
 <suite name="Suite">
 
 <listeners> 
-<listener class-name="TestNGListnerConcept.CustomListner"></listener>
+<listener class-name="ScreenshotForFailedTest.CustomListner"></listener>
 </listeners>
 
   <test thread-count="5" name="Test">
     <classes>
-      <class name="TestNGListnerConcept.ScreenshotTest"/>
+      <class name="ScreenshotForFailedTest.ScreenshotTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

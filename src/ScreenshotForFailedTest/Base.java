@@ -1,4 +1,4 @@
-package TestNGListnerConcept;
+package ScreenshotForFailedTest;
 
 import java.io.File;
 import java.io.IOException;
@@ -42,7 +42,7 @@ public class Base {
 	public void failed(String testMethodName) {
 		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
-			FileUtils.copyFile(srcFile, new File("/Users/saikiran/eclipse-workspace/SeleniumDifferentConcepts/Screenshots/"+testMethodName+" "+timeStamp()+".jpg"));
+			FileUtils.copyFile(srcFile, new File(System.getProperty("user.dir")+"/Screenshots/"+testMethodName+" "+timeStamp()+".jpg"));
 		}
 		catch(IOException e){
 			e.printStackTrace();

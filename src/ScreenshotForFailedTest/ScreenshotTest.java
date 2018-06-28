@@ -1,4 +1,4 @@
-package TestNGListnerConcept;
+package ScreenshotForFailedTest;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
