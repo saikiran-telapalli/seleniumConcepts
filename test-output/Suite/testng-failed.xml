@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="-1" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="One" value="See"/>
+  <listeners>
+    <listener class-name="TestNGListnerConcept.CustomListner"/>
+  </listeners>
   <test name="Test(failed)">
     <classes>
-      <class name="TestNG.ClassLevelAnnotations">
+      <class name="TestNGListnerConcept.ScreenshotTest">
         <methods>
-          <include name="One"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="test2"/>
         </methods>
-      </class> <!-- TestNG.ClassLevelAnnotations -->
+      </class> <!-- TestNGListnerConcept.ScreenshotTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

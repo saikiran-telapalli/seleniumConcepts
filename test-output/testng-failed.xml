@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="-1" name="Failed suite [RetryFailedTestSuite]" guice-stage="DEVELOPMENT">
+<suite thread-count="-1" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <listeners>
-    <listener class-name="RetryLogic.MyTransformer"/>
+    <listener class-name="TestNGListnerConcept.CustomListner"/>
   </listeners>
-  <test name="RetryMulitpleFailedTestCases(failed)">
+  <test name="Test(failed)">
     <classes>
-      <class name="RetryLogic.MyTests">
+      <class name="TestNGListnerConcept.ScreenshotTest">
         <methods>
-          <include name="Test2"/>
-          <include name="Test1"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="test2"/>
         </methods>
-      </class> <!-- RetryLogic.MyTests -->
+      </class> <!-- TestNGListnerConcept.ScreenshotTest -->
     </classes>
-  </test> <!-- RetryMulitpleFailedTestCases(failed) -->
-</suite> <!-- Failed suite [RetryFailedTestSuite] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

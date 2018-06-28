@@ -26,7 +26,7 @@ public class ToCheckBrokenLinks {
 
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().fullscreen();
-		driver.get("https://www.moolyacoin.io/");
+		driver.get("https://www.moolya.global/");
 		
 		List<WebElement> links_List = driver.findElements(By.tagName("a"));
 		links_List.addAll(driver.findElements(By.tagName("img")));
