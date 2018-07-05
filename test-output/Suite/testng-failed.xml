@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="-1" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="ScreenshotForFailedTest.CustomListner"/>
-  </listeners>
-  <test name="Test(failed)">
+  <test name="firefoxTest(failed)">
+    <parameter name="browserType" value="firefox"/>
     <classes>
-      <class name="ScreenshotForFailedTest.ScreenshotTest">
+      <class name="testParallelExecu.ParallelTestClass">
         <methods>
+          <include name="test1"/>
+          <include name="openBrowser"/>
           <include name="test2"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
         </methods>
-      </class> <!-- ScreenshotForFailedTest.ScreenshotTest -->
+      </class> <!-- testParallelExecu.ParallelTestClass -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- firefoxTest(failed) -->
+  <test name="ieTest(failed)">
+    <parameter name="browserType" value="ie"/>
+    <classes>
+      <class name="testParallelExecu.ParallelTestClass">
+        <methods>
+          <include name="test1"/>
+          <include name="openBrowser"/>
+          <include name="test2"/>
+        </methods>
+      </class> <!-- testParallelExecu.ParallelTestClass -->
+    </classes>
+  </test> <!-- ieTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->
