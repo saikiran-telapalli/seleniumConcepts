@@ -38,7 +38,7 @@ public class AllAnnotationsExecutionOrder {
 		System.out.println("AllAnnotationsExecutionOrder test1");
 	}
 
-	@Test 
+	@Test
 	public void test2(){
 		System.out.println("AllAnnotationsExecutionOrder test2");  //Test that don,t have priority will execute first
 	}

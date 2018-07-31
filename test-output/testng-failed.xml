@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="-1" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test name="firefoxTest(failed)">
-    <parameter name="browserType" value="firefox"/>
+<suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test name="Default test(failed)">
     <classes>
-      <class name="testParallelExecu.ParallelTestClass">
+      <class name="TestNG.DependencyInjections">
         <methods>
-          <include name="test1"/>
-          <include name="openBrowser"/>
+          <include name="main"/>
+          <include name="afterMethod"/>
+          <include name="test"/>
           <include name="test2"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- testParallelExecu.ParallelTestClass -->
+      </class> <!-- TestNG.DependencyInjections -->
     </classes>
-  </test> <!-- firefoxTest(failed) -->
-  <test name="ieTest(failed)">
-    <parameter name="browserType" value="ie"/>
-    <classes>
-      <class name="testParallelExecu.ParallelTestClass">
-        <methods>
-          <include name="test1"/>
-          <include name="openBrowser"/>
-          <include name="test2"/>
-        </methods>
-      </class> <!-- testParallelExecu.ParallelTestClass -->
-    </classes>
-  </test> <!-- ieTest(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

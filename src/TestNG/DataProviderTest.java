@@ -14,7 +14,7 @@ public class DataProviderTest {
 
 	@DataProvider(name = "Authentication")
 	public static Object[][] credentials() {
-		return new Object[][] { { "testuser_1", "Test@123" }, { "testuser_1", "Test@123" }};
+		return new Object[][] { { "testuser_1", "Test@123" }, { "testuser_2", "Test@123" }};
 	}
 
 	// Here we are calling the Data Provider object with its Name
