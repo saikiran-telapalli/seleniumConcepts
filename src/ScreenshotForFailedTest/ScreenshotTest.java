@@ -30,6 +30,7 @@ public class ScreenshotTest extends Base{
 	public void test2() {
 		System.out.println("started test2");
 		Assert.assertEquals(false, true);
+
 	}
 	
 	@Test

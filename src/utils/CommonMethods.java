@@ -256,6 +256,7 @@ public class CommonMethods extends BaseClass{
 		WebElement drop = driver.findElement(droplocator);
 		Actions action= new Actions(driver);
 		action.dragAndDrop(drag, drop).build().perform();
+
 	}
 
 	public static void selectDropdown(By locator, String VisibleText) {
